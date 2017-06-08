@@ -16,4 +16,12 @@ public class Calculator {
         return a + b;
     }
 
+    public int divide(int a, int divisor){
+        if (Integer.valueOf(0).equals(divisor)){
+            throw new ArithmeticException("You can't divide by zero.");
+        }
+
+        return a / divisor;
+    }
+
 }
