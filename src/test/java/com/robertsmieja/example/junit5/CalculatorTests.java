@@ -15,7 +15,6 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.*;
 
-@Tag("fast")
 class CalculatorTests {
 
     Calculator objectUnderTest;
@@ -42,7 +41,7 @@ class CalculatorTests {
     }
 
     @Test
-    @DisplayName("Private methods still don't work, but will fail silenty")
+    @DisplayName("Private test methods still don't work, but will fail silently")
     private void privateTestMethod(){
         throw new RuntimeException("This will never happen");
     }
