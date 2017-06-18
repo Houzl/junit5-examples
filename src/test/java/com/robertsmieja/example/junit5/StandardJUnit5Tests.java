@@ -5,9 +5,7 @@ import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.fail;
 
 public class StandardJUnit5Tests {
-//    static int beforeAll, afterAll = 0;
     static int beforeAll, afterAll, beforeEach, afterEach = 0;
-//    int beforeEach, afterEach = 0;
 
     @BeforeAll
     private static void oneTimeSetup() {

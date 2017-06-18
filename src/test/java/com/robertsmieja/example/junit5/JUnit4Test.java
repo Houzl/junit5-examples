@@ -10,14 +10,34 @@
 
 package com.robertsmieja.example.junit5;
 
-import static org.junit.Assert.assertEquals;
-
+import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
+
 public class JUnit4Test {
+    Calculator objectUnderTest;
+
+    @Before
+    public void setup() {
+        objectUnderTest = new Calculator();
+    }
 
     @Test
-    public void test() {
-        assertEquals(3, 1 + 2);
+    public void testAdd() {
+        assertEquals(3, objectUnderTest.add(1, 2));
+    }
+
+    @Test
+    public void testDivide() {
+        assertEquals(1, objectUnderTest.divide(2, 2));
+    }
+
+    @Test
+    @Ignore
+    public void testIgnoredTest(){
+        fail("This test should not run");
     }
 }
