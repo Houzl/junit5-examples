@@ -27,7 +27,7 @@ public class GroupedAssertionTests {
 
     @Test
     @DisplayName("Group of failures")
-    //All passed statements will execute
+    //All statements will execute
     void groupOfFailures(){
         assertAll("Grouped assertAll failures",
                 () -> fail("First failure"),
