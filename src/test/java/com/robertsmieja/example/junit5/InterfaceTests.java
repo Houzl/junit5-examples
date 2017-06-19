@@ -7,14 +7,9 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class InterfaceTests {
-
-    public static class InterfaceConsumerTests implements ExampleInterface {
-
-    }
-
     @Tag("Inteface")
     @DisplayName("Example interface")
-    public interface ExampleInterface {
+    public interface InterfaceWithTests {
         Calculator objectUnderTest = new Calculator();
 
         @Test
@@ -26,5 +21,8 @@ public class InterfaceTests {
         default void simpleDivisionTest() {
             assertEquals(1, objectUnderTest.divide(2, 2));
         }
+    }
+
+    public static class ClassThatUsesInterfaceForTests implements InterfaceWithTests {
     }
 }
