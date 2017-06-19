@@ -46,6 +46,10 @@ junitPlatform {
 //    logManager 'org.apache.logging.log4j.jul.LogManager'
 }
 
+afterEvaluate { //TODO why is this afterEvaluate? The plugin should have already been applied
+    tasks['junitPlatformTest'].ignoreExitValue = true //Don't fail the build when a test fails
+}
+
 dependencies {
     // JUnit Jupiter API and TestEngine implementation
     testCompile("org.junit.jupiter:junit-jupiter-api:${junitJupiterVersion}")
