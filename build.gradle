@@ -25,7 +25,6 @@ apply plugin: 'org.junit.platform.gradle.plugin'
 compileTestJava {
     sourceCompatibility = 1.8
     targetCompatibility = 1.8
-//    options.compilerArgs += '-parameters'
 }
 
 junitPlatform {
@@ -37,13 +36,13 @@ junitPlatform {
         }
         tags {
             // include 'fast'
-//            exclude 'slow'
+            // exclude 'slow'
         }
         // includeClassNamePattern '.*Test'
     }
     // enableStandardTestTask true
     // reportsDir file('build/test-results/junit-platform') // this is the default
-//    logManager 'org.apache.logging.log4j.jul.LogManager'
+    //logManager 'org.apache.logging.log4j.jul.LogManager'
 }
 
 afterEvaluate { //TODO why is this afterEvaluate? The plugin should have already been applied
@@ -62,6 +61,6 @@ dependencies {
     testCompile("junit:junit:${junit4Version}")
     testRuntime("org.junit.vintage:junit-vintage-engine:${junitVintageVersion}")
 
-//    testRuntime("org.apache.logging.log4j:log4j-core:${log4jVersion}")
-//    testRuntime("org.apache.logging.log4j:log4j-jul:${log4jVersion}")
+    //testRuntime("org.apache.logging.log4j:log4j-core:${log4jVersion}")
+    //testRuntime("org.apache.logging.log4j:log4j-jul:${log4jVersion}")
 }
