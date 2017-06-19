@@ -17,7 +17,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 
-public class JUnit4Test {
+public class JUnit4Tests {
     Calculator objectUnderTest;
 
     @Before
