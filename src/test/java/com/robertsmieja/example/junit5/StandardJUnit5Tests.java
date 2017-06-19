@@ -47,4 +47,10 @@ public class StandardJUnit5Tests {
     void ignoredTest(){
         fail("This test will not run");
     }
+
+    @Test
+    //Private test methods still don't work, but will fail silently
+    private void privateTestMethod(){
+        throw new RuntimeException("This will never execute");
+    }
 }
