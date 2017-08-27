@@ -34,12 +34,12 @@ public class ParameterizedTests {
 
     @DisplayName("Testing using a MethodSource for params")
     @ParameterizedTest(name = "Test with values {0} + {1}")
-    @MethodSource(names = {"integerStream"})
+    @MethodSource("integerStream")
     void testAddWithMethodSource(int a, int b){
         assertEquals(a + b,objectUnderTest.add(a, b));
     }
 
     //Must return Stream, Iterable, Iterator or array
     //Must be static and accept no-args
-    static Stream<Arguments> integerStream(){ return Stream.of(ObjectArrayArguments.create(1, 1), ObjectArrayArguments.create(2, 2)); }
+    static Stream<Arguments> integerStream(){ return Stream.of(Arguments.of(1, 1), Arguments.of(2, 2)); }
 }
