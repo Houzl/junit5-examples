@@ -32,7 +32,7 @@ public class StandardJUnit5Tests {
     }
 
     @Test
-    void passingTest(){
+    protected void passingTest(){
         System.out.println("passingTest() running...");
     }
 

@@ -23,6 +23,7 @@ public class InterfaceTests {
         }
     }
 
+    @DisplayName("Custom class")
     public static class ClassThatUsesInterfaceForTests implements InterfaceWithTests {
     }
 }
