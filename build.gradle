@@ -55,6 +55,10 @@ dependencies {
 
     //For parameterized tests
     testCompile("org.junit.jupiter:junit-jupiter-params:${junitJupiterVersion}")
+    
+    //TODO Try removing this on the official release of Eclipse Oxygen.1
+    //Fix ClassDefNotFound issues in Eclipse
+    testCompile("org.junit.platform:junit-platform-launcher:${junitPlatformVersion}")
 
     // If you also want to support JUnit 3 and JUnit 4 tests
     testCompile("junit:junit:${junit4Version}")
