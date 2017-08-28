@@ -5,7 +5,6 @@ import org.junit.jupiter.api.extension.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-@Tag("dependency_injection")
 @ExtendWith(DependencyInjectionTests.SimpleIntegerExtension.class)
 public class DependencyInjectionTests {
     Calculator objectUnderTest;
@@ -17,7 +16,6 @@ public class DependencyInjectionTests {
     }
 
     @Test
-    @Tag("second_tag")
     //Multiple dependencies can be injected
     void simpleAddition(TestInfo testInfo, TestReporter testReporter){
         printTestInfo(testInfo);
@@ -35,7 +33,6 @@ public class DependencyInjectionTests {
 
     private void printTestInfo(TestInfo testInfo){
         System.out.println("Display Name: <" + testInfo.getDisplayName() + ">");
-        System.out.println("Tags: <" + testInfo.getTags() + ">");
         System.out.println("Test Class: <" + testInfo.getTestClass().get() + ">");
         System.out.println("Test Method: <" + testInfo.getTestMethod().get() + ">");
     }

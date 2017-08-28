@@ -15,7 +15,6 @@ ext.junit4Version        = '4.12'
 ext.junitVintageVersion  = '4.12.0-RC3'
 ext.junitPlatformVersion = '1.0.0-RC3'
 ext.junitJupiterVersion  = '5.0.0-RC3'
-//ext.log4jVersion         = '2.6.2'
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
@@ -25,24 +24,6 @@ apply plugin: 'org.junit.platform.gradle.plugin'
 compileTestJava {
     sourceCompatibility = 1.8
     targetCompatibility = 1.8
-}
-
-junitPlatform {
-    // platformVersion '1.0.0-RC3'
-    filters {
-        engines {
-            // include 'junit-jupiter', 'junit-vintage'
-            // exclude 'custom-engine'
-        }
-        tags {
-            // include 'fast'
-            // exclude 'slow'
-        }
-        // includeClassNamePattern '.*Test'
-    }
-    // enableStandardTestTask true
-    // reportsDir file('build/test-results/junit-platform') // this is the default
-    //logManager 'org.apache.logging.log4j.jul.LogManager'
 }
 
 tasks['eclipse'].dependsOn tasks['cleanEclipse'] //Delete previous Eclipse project files instead of merging them
@@ -59,7 +40,4 @@ dependencies {
     // If you also want to support JUnit 3 and JUnit 4 tests
     testCompile("junit:junit:${junit4Version}")
     testRuntime("org.junit.vintage:junit-vintage-engine:${junitVintageVersion}")
-
-    //testRuntime("org.apache.logging.log4j:log4j-core:${log4jVersion}")
-    //testRuntime("org.apache.logging.log4j:log4j-jul:${log4jVersion}")
 }
