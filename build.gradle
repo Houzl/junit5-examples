@@ -45,6 +45,7 @@ junitPlatform {
     //logManager 'org.apache.logging.log4j.jul.LogManager'
 }
 
+tasks['eclipse'].dependsOn tasks['cleanEclipse'] //Delete previous Eclipse project files instead of merging them
 tasks['junitPlatformTest'].ignoreExitValue = true //Don't fail the build when a test fails
 
 dependencies {
